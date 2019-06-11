@@ -1,0 +1,46 @@
+from tkinter import *
+from tkinter import messagebox
+from PIL import Image, ImageTk
+
+glowneOkno = Tk()
+pasekMenu = Menu(glowneOkno)
+plotno=Canvas(glowneOkno, width=1200, height=800)
+plotno.pack(side=LEFT)
+
+guzik=Frame(glowneOkno, width=100, height=800, bg='red')
+guzik.pack()
+
+wyjdz=Button(guzik, command=glowneOkno.quit, text= "WYCHODZĘ!")
+wyjdz.pack()
+
+obraz = Image.open("l.jpg")
+obrazTk=ImageTk.PhotoImage(obraz)
+
+plotno.create_image(400,400, image=obrazTk)
+
+def akcjaAutor():
+    messagebox.showinfo("Autor", "Autorem jest Ismena, Marysia, Marcin, Pawel")
+def akcjaUst():
+    messagebox.showinfo("Ustawienia", "No zamiast tego trzeba ustawienia dać generatora")
+
+przycisk_gen = Button(glowneOkno, text="Generuj kognimowę!", command = nowe_okno)
+przycisk_gen.place(x=920,y=390)
+
+
+pierwszeMenu = Menu(pasekMenu, tearoff=0)
+pomocMenu = Menu(pasekMenu, tearoff=0)
+pasekMenu.add_cascade(label="Menu",
+                        menu=pierwszeMenu)
+pierwszeMenu.add_command(label="Ustawienia",
+                            command=akcjaUst)
+
+pomocMenu.add_command(label="O Autorze",
+                            command=akcjaAutor)
+pasekMenu.add_cascade(label="Autor",
+menu=pomocMenu)
+
+
+
+
+glowneOkno.config(menu=pasekMenu)
+glowneOkno.mainloop()
