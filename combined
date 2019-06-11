@@ -22,6 +22,8 @@ def akcjaAutor():
     messagebox.showinfo("Autor", "Autorem jest Ismena, Marysia, Marcin, Pawel")
 def akcjaUst():
     messagebox.showinfo("Ustawienia", "No zamiast tego trzeba ustawienia dać generatora")
+def akcjaKI():
+    messagebox.showinfo("O Kogni ipsum", "Stuck with your research work? No worries! The best way to fill blank spaces in your research paper! Feel free to use large amounts of text. It is AI generated and gets really creative sometimes. Your cognitive lifestyle here and now! ")
 
 przycisk_gen = Button(glowneOkno, text="Generuj kognimowę!", command = nowe_okno)
 przycisk_gen.place(x=920,y=390)
@@ -29,6 +31,7 @@ przycisk_gen.place(x=920,y=390)
 
 pierwszeMenu = Menu(pasekMenu, tearoff=0)
 pomocMenu = Menu(pasekMenu, tearoff=0)
+kogniMenu = Menu(pasekMenu, tearoff=0)
 pasekMenu.add_cascade(label="Menu",
                         menu=pierwszeMenu)
 pierwszeMenu.add_command(label="Ustawienia",
@@ -39,7 +42,9 @@ pomocMenu.add_command(label="O Autorze",
 pasekMenu.add_cascade(label="Autor",
 menu=pomocMenu)
 
-
+pasekMenu.add_cascade(label="Kogni Ipsum", menu=kogniMenu)
+kogniMenu.add_command(label="O Kogni ipsum",
+                            command=akcjaKI)
 
 
 glowneOkno.config(menu=pasekMenu)
