@@ -8,10 +8,10 @@ pasekMenu = Menu(glowneOkno)
 plotno=Canvas(glowneOkno, width=1200, height=800)
 plotno.pack(side=LEFT)
 
-guzik=Frame(glowneOkno, width=100, height=800, bg='red'
+guzik=Frame(glowneOkno, width=100, height=800, bg='red')
 guzik.pack()
 
-wyjdz=(guzik, command=glowneOkno.quit, text= "WYCHODZĘ!")
+wyjdz=Button(guzik, command=glowneOkno.quit, text= "WYCHODZĘ!")
 wyjdz.pack()
 
 obraz = Image.open("l.jpg")
