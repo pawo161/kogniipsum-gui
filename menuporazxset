@@ -1,0 +1,18 @@
+def akcjaKI():
+    messagebox.showinfo("O Kogni ipsum", "Stuck with your research work? No worries! The best way to fill blank spaces in your research paper! Feel free to use large amounts of text. It is AI generated and gets really creative sometimes. Your cognitive lifestyle here and now! ")
+
+pierwszeMenu = Menu(pasekMenu, tearoff=0)
+pomocMenu = Menu(pasekMenu, tearoff=0)
+kogniMenu = Menu(pasekMenu, tearoff=0)
+pasekMenu.add_cascade(label="Menu",
+                        menu=pierwszeMenu)
+pierwszeMenu.add_command(label="Ustawienia",
+                            command=akcjaUst)
+
+pomocMenu.add_command(label="O Autorze",
+                            command=akcjaAutor)
+pasekMenu.add_cascade(label="Autor",
+menu=pomocMenu)
+pasekMenu.add_cascade(label="Kogni Ipsum", menu=kogniMenu)
+kogniMenu.add_command(label="O Kogni ipsum",
+                            command=akcjaKI)
