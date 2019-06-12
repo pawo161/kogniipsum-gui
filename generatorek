@@ -1,0 +1,10 @@
+def nowe_okno(): # new window definition
+    master2 = Tk()
+    master2.geometry("1200x800")
+    master2.title("New Window")
+    number = random.randint(1, 30)
+    temp = open("/Users/pawelk/Downloads/kogniipsum-master/gp2_generated/gpt2_gentext%s.txt" % number, 'r')
+    l = ' '.join(map(str, temp))
+    label = Label(master2, text=l)
+    label.pack()
+    master2.mainloop()
